@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <properties>
+        <title>Plugin progressmanager</title>
+    </properties>
+    <head>
+        <!-- Keywords example : "cms, authentication, cms, workflow, seo, collaborative, ..." 
+             Use the language of this xdoc -->
+        <meta name="keywords" content="tech, javascript, ux, progress-bar" />
+    </head>
+    <body>
+        <section name="Plugin progressmanager">
+            <!--
+            <p>
+                <img src="images/progressmanager.png" />
+            </p>
+            -->
+            <subsection name="Introduction">
+                <p>Ce plugin permet de gérer des données  de progression de  processus.</p>
+                <p>Il permet de gérer un pourcentage d'avancement, un nombre de succès et erreurs, et un rapport.</p>
+            </subsection>
+            <subsection name="Configuration">
+                <p>Utilisez l'instance  ProgressManagerService pour enregistrer le flux et récupérer un token, et mettre à jour les données du flux.</p>
+            </subsection>
+            <subsection name="Usage">
+                <p>Utilisez les méthodes du webservice REST dans votre code HTML : </p>
+                <ul>
+                    <li>/rest/progressmanager/api/v1/progressfeed/[token of the feed] : pourcentage d'avancement</li>
+                    <li>/rest/progressmanager/api/v1/progressfeed/[token of the feed]/success : nb de succès </li>
+                    <li>/rest/progressmanager/api/v1/progressfeed/[token of the feed]/failure : nb d'erreurs </li>
+                    <li>/rest/progressmanager/api/v1/progressfeed/[token of the feed]/report : rapport </li>
+                </ul>
+            </subsection>
+        </section>
+    </body>
+</document>
+
+
+

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document>
+    <properties>
+        <title>Plugin progressmanager</title>
+    </properties>
+    <head>
+        <!-- Keywords example : "cms, authentication, cms, workflow, seo, collaborative, ..." 
+             Use the language of this xdoc -->
+        <meta name="keywords" content="tech, javascript, ux, progress-bar" />
+    </head>
+    <body>
+        <section name="Plugin progressmanager">
+            <!--
+            <p>
+                <img src="images/progressmanager.png" />
+            </p>
+            -->
+            <subsection name="Introduction">
+                <p>This plugin manage progression processes. </p>
+                <p>this plugin allows you to manage achievement pourcentage, number of successful actions, number of failures, and a final report</p>
+            </subsection>
+            <subsection name="Configuration">
+                <p>Use the ProgressManagerService instance to register the process progression status and get a token, and update the number of successful actions, number of failures, and add reports.</p>
+            </subsection>
+            <subsection name="Usage">
+                <p>Use the REST web service methods in your progress bar HTML code : </p>
+                <ul>
+                    <li>/rest/progressmanager/api/v1/progressfeed/[token of the feed] : achievement pourcentage </li>
+                    <li>/rest/progressmanager/api/v1/progressfeed/[token of the feed]/success : success nb </li>
+                    <li>/rest/progressmanager/api/v1/progressfeed/[token of the feed]/failure : failure nb </li>
+                    <li>/rest/progressmanager/api/v1/progressfeed/[token of the feed]/report : report </li>
+                </ul>
+            </subsection>
+        </section>
+    </body>
+</document>
+
