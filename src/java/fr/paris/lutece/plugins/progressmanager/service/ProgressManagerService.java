@@ -77,6 +77,18 @@ public final class ProgressManagerService
     }
 
     /**
+     * ge progress feeds
+     * 
+     * @return the progress feeds
+     */
+    public Map<String, ProgressFeed> getProgressFeeds( ) {
+        Map<String, ProgressFeed> feedMap = new HashMap< >( );
+        feedMap.putAll( _progressFeeds );
+        
+        return feedMap;
+    }
+
+    /**
      * register new progress feed
      * returns a generated token to identify the feed for rest webservice
      * 

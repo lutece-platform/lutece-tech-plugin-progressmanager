@@ -31,55 +31,61 @@
  *
  * License 1.0
  */
-package fr.paris.lutece.plugins.progressmanager.business;
+package fr.paris.lutece.plugins.progressmanager.web;
 
+import fr.paris.lutece.plugins.progressmanager.business.ProgressFeed;
 import fr.paris.lutece.plugins.progressmanager.service.ProgressManagerService;
-import fr.paris.lutece.test.LuteceTestCase;
+import fr.paris.lutece.portal.util.mvc.admin.MVCAdminJspBean;
+import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
+import fr.paris.lutece.portal.util.mvc.admin.annotations.Controller;
+import fr.paris.lutece.portal.util.mvc.commons.annotations.View;
+
 /**
- * This is the business class test for the object ProgressFeed
+ * This class provides the user interface to manage Agent features ( manage )
  */
-public class ProgressFeedBusinessTest extends LuteceTestCase
+@Controller( controllerJsp = "ManageProgressFeeds.jsp", controllerPath = "jsp/admin/plugins/progressmanager/", right = "PROGRESSMANAGER_MANAGEMENT" )
+public class ProgressManagerJspBean extends MVCAdminJspBean
 {
-    private static final int NBITEMTOTAL = 10;
-    private static final int NBITEMSUCCESS1 = 1;
-    private static final int NBITEMSUCCESS2 = 2;
-    private static final int NBITEMFAILURE1 = 1;
-    private static final int NBITEMFAILURE2 = 2;
-    private static final String REPORT1 = "Report1";
-    private static final String REPORT2 = "Report2";
-    private static final String FEED_NAME = "TestFeed";
 
     /**
-     * test ProgressFeed
+     * serialVersionUID
      */
-    public void testBusiness( )
+    private static final long serialVersionUID = 237753177212082626L;
+
+    // Templates
+    private static final String TEMPLATE_MANAGE_PROGRESS_FEEDS = "/admin/plugins/progressmanager/manage_progress_feeds.html";
+
+    // Properties for page titles
+    private static final String PROPERTY_PAGE_TITLE_MANAGE_PROGRESS_FEEDS = "progressmanager.manage_feeds.pageTitle";
+
+    // Markers
+    private static final String MARK_FEED_LIST = "feed_list";
+
+    // Views
+    private static final String VIEW_MANAGE_PROGRESS_FEEDS = "manageProgressFeeds";
+
+
+    /**
+     * Build the Manage View
+     *
+     * @param request
+     *            The HTTP request
+     * @return The page
+     */
+    @View( value = VIEW_MANAGE_PROGRESS_FEEDS, defaultView = true )
+    public String getManageProgressFeeds( HttpServletRequest request )
     {
-        // Initialize
         ProgressManagerService service = ProgressManagerService.getInstance( );
-        String strFeedToken = service.registerFeed( FEED_NAME, NBITEMTOTAL );
-
-        Map<String, ProgressFeed> map = service.getProgressFeeds( );
-        assertNotNull( map );
-
-        // increment
-        service.incrementSuccess( strFeedToken, NBITEMSUCCESS1 );
-        service.incrementSuccess( strFeedToken, NBITEMSUCCESS2 );
-        service.incrementFailure( strFeedToken, NBITEMFAILURE1 );
-        service.incrementFailure( strFeedToken, NBITEMFAILURE2 );
-        service.addReport( strFeedToken, REPORT1 );
-        service.addReport( strFeedToken, REPORT2 );
-
-        // test
-        assertEquals( service.getProgressStatus( strFeedToken ), 60 );
-        assertEquals( service.getSuccessNb( strFeedToken ), NBITEMSUCCESS1 + NBITEMSUCCESS2 );
-        assertEquals( service.getFailureNb( strFeedToken ), NBITEMFAILURE1 + NBITEMFAILURE2 );
-        assertEquals( service.getReport( strFeedToken ).get( 0 ), REPORT1 );
-        assertEquals( service.getReport( strFeedToken ).get( 1 ), REPORT2 );
         
-        service.unRegisterFeed( strFeedToken );
+        Map<String, ProgressFeed> feedMap = service.getProgressFeeds( );
         
+        Map<String, Object> model = new HashMap<>( );
+        model.put( MARK_FEED_LIST, feedMap );
+
+        return getPage( PROPERTY_PAGE_TITLE_MANAGE_PROGRESS_FEEDS, TEMPLATE_MANAGE_PROGRESS_FEEDS, model );
     }
-
 }

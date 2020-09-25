@@ -1,0 +1,17 @@
+<@box>
+	<@boxHeader title='#i18n{progressmanager.progress_feeds.title}' />
+	<@boxBody>
+        
+        <#list feed_list as feedId, feed >
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h5 class="panel-title">${feed.id} (${feedId})</h5>
+		</div>
+                <div class="panel-body">
+                    <@progressManager token='${feed.token}' id='progress-${feed.token}' intervalTime=10000 />
+                </div>
+            </div>
+        </#list>
+        
+        </@boxBody>
+</@box>

@@ -217,10 +217,10 @@ public class ProgressFeedRest
      *            the id
      * @return the ProgressFeed for the version 1
      */
-    private Response getReportV1( String strId )
+    private Response getReportV1( String strFeedId )
     {
         ProgressManagerService _service = ProgressManagerService.getInstance( );
-        if ( _service == null || !_service.isRegistred( strId ) )
+        if ( _service == null || !_service.isRegistred( strFeedId ) )
         {
             _logger.error( Constants.ERROR_NOT_FOUND_RESOURCE );
             return Response.status( Response.Status.NOT_FOUND )
@@ -229,6 +229,6 @@ public class ProgressFeedRest
         }
 
         return Response.status( Response.Status.OK )
-                .entity( JsonUtil.buildJsonResponse( new JsonResponse( ProgressManagerService.getInstance( ).getReport( strId ) ) ) ).build( );
+                .entity( JsonUtil.buildJsonResponse( new JsonResponse( ProgressManagerService.getInstance( ).getReport( strFeedId ) ) ) ).build( );
     }
 }

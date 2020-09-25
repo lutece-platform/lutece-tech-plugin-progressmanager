@@ -53,8 +53,8 @@
 
     <properties>
         <componentName>progressmanager</componentName>
-        <jiraProjectName>PROGRESSMANAGER</jiraProjectName>
-        <jiraComponentId />
+        <jiraProjectName>PROGMNG</jiraProjectName>
+	<jiraComponentId>PROGMNG</jiraComponentId>
     </properties>
 
     <scm>
