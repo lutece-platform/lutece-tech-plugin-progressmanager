@@ -58,9 +58,9 @@
     </properties>
 
     <scm>
-        <connection>scm:git:https://github.com/lutece-platform/lutece-tech-library-progressmanager.git</connection>
-        <developerConnection>scm:git:https://github.com/lutece-platform/lutece-tech-library-progressmanager.git</developerConnection>
-        <url>https://github.com/lutece-platform/lutece-tech-library-progressmanager.git</url>
+        <connection>scm:git:https://github.com/lutece-platform/lutece-tech-plugin-progressmanager.git</connection>
+        <developerConnection>scm:git:https://github.com/lutece-platform/lutece-tech-plugin-progressmanager.git</developerConnection>
+        <url>https://github.com/lutece-platform/lutece-tech-plugin-progressmanager.git</url>
         <tag>HEAD</tag>
   </scm>
 
