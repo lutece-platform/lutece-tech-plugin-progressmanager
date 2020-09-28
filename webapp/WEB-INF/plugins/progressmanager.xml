@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><plug-in>
     <name>progressmanager</name>
     <class>fr.paris.lutece.portal.service.plugin.PluginDefaultImplementation</class>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
     <documentation/>
     <installation/>
     <changes/>
@@ -33,7 +33,7 @@
             <feature-level>3</feature-level>
             <feature-url>jsp/admin/plugins/progressmanager/ManageProgressFeeds.jsp
             </feature-url>
-            <feature-icon-url />
+            <feature-icon-url/>
         </admin-feature>
     </admin-features>
 
