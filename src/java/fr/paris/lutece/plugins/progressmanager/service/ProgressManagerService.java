@@ -81,16 +81,16 @@ public final class ProgressManagerService
      * 
      * @return the progress feeds
      */
-    public Map<String, ProgressFeed> getProgressFeeds( ) {
-        Map<String, ProgressFeed> feedMap = new HashMap< >( );
+    public Map<String, ProgressFeed> getProgressFeeds( )
+    {
+        Map<String, ProgressFeed> feedMap = new HashMap<>( );
         feedMap.putAll( _progressFeeds );
-        
+
         return feedMap;
     }
 
     /**
-     * register new progress feed
-     * returns a generated token to identify the feed for rest webservice
+     * register new progress feed returns a generated token to identify the feed for rest webservice
      * 
      * @param strProgressFeedName
      * @param nTotalItems
@@ -101,12 +101,12 @@ public final class ProgressManagerService
         ProgressFeed feed = new ProgressFeed( );
         feed.setId( strProgressFeedName );
         feed.setNbItemTotal( nTotalItems );
-        
+
         String strToken = UUID.randomUUID( ).toString( );
         feed.setToken( strToken );
 
         _progressFeeds.put( strToken, feed );
-        
+
         return feed.getToken( );
     }
 
@@ -119,12 +119,12 @@ public final class ProgressManagerService
     {
         _progressFeeds.remove( strFeedToken );
     }
-    
+
     /**
      * register new progress feed
      * 
      * @param strFeedToken
-     * @return 
+     * @return
      */
     public boolean isRegistred( String strFeedToken )
     {

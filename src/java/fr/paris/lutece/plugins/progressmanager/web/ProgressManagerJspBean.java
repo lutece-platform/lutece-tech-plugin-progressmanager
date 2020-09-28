@@ -68,7 +68,6 @@ public class ProgressManagerJspBean extends MVCAdminJspBean
     // Views
     private static final String VIEW_MANAGE_PROGRESS_FEEDS = "manageProgressFeeds";
 
-
     /**
      * Build the Manage View
      *
@@ -80,9 +79,9 @@ public class ProgressManagerJspBean extends MVCAdminJspBean
     public String getManageProgressFeeds( HttpServletRequest request )
     {
         ProgressManagerService service = ProgressManagerService.getInstance( );
-        
+
         Map<String, ProgressFeed> feedMap = service.getProgressFeeds( );
-        
+
         Map<String, Object> model = new HashMap<>( );
         model.put( MARK_FEED_LIST, feedMap );
 

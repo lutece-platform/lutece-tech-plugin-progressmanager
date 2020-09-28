@@ -77,9 +77,9 @@ public class ProgressFeedBusinessTest extends LuteceTestCase
         assertEquals( service.getFailureNb( strFeedToken ), NBITEMFAILURE1 + NBITEMFAILURE2 );
         assertEquals( service.getReport( strFeedToken ).get( 0 ), REPORT1 );
         assertEquals( service.getReport( strFeedToken ).get( 1 ), REPORT2 );
-        
+
         service.unRegisterFeed( strFeedToken );
-        
+
     }
 
 }

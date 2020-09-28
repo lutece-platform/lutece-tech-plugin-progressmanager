@@ -54,7 +54,7 @@ public class ProgressFeed implements Serializable
 
     private int _nNbItemFailure = 0;
 
-    private List<String> _report = new ArrayList<>();
+    private List<String> _report = new ArrayList<>( );
 
     /**
      * Returns the Id

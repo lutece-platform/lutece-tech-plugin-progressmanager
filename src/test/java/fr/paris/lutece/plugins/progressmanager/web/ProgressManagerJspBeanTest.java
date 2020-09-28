@@ -45,14 +45,13 @@ import org.junit.Test;
 public class ProgressManagerJspBeanTest extends LuteceTestCase
 {
     @Test
-    public void testJspBeans(  ) throws AccessDeniedException
-    {	
-     	MockHttpServletRequest request = new MockHttpServletRequest( );
-        
-        //display admin Test management JSP
+    public void testJspBeans( ) throws AccessDeniedException
+    {
+        MockHttpServletRequest request = new MockHttpServletRequest( );
+
+        // display admin Test management JSP
         ProgressManagerJspBean jspbean = new ProgressManagerJspBean( );
         String html = jspbean.getManageProgressFeeds( request );
-        assertNotNull(html);
+        assertNotNull( html );
     }
 }
-
