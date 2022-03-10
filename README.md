@@ -5,6 +5,11 @@
 
 # Plugin progressmanager
 
+/!\ Deprecated : 
+
+This service is now provided natively by Lutece core 7 
+
+
 ## Introduction
 
 This plugin manage progression processes.
